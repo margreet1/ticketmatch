@@ -1,20 +1,20 @@
 <%= render "partials/navbar" %>
 
-<h3 class="text-center"><%= @match.date %></h3>
-
-<div class="flexbox text-center">
-  <div>
-    <h4>Home</h4>
-    <h3><%= @match.home_team %></h3>
-  </div>
-  <div>
-    <h4>Away</h4>
-    <h3><%= @match.away_team %></h3>
+<div class="match_banner" style='background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url("<%= @match.photo %>");'>
+  <div class="banner-content">
+    <h4 class="text-center"><%= @match.date %></h4>
+    <div class="flexbox text-center">
+     <div>
+       <h4>Home</h4>
+       <h2><%= @match.home_team %></h2>
+     </div>
+     <div>
+       <h4>Away</h4>
+       <h2><%= @match.away_team %></h2>
+     </div>
+    </div>
   </div>
 </div>
-
-<%= @match.photo %>
-
 
 <% @tickets.each do |ticket| %>
   <% if !ticket.sold %>
