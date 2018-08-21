@@ -18,11 +18,7 @@
       <div class="homepage_card orange">
         <h3>Catch the game</h3>
         <p class="explanation">Can't find a ticket? Our intuitive and easy platform gives you access to the highest-quality seats at the last minute, so you'll never miss a moment.</p>
-        <% if current_user %>
-          <%= link_to "", dashboard_path %>
-        <% else %>
-          <%= link_to "", new_user_session_path %>
-        <% end %>
+        <%= link_to "", matches_path %>
       </div>
     </div>
 
