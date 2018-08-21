@@ -1,10 +1,9 @@
 <h1>MatchTickets#show</h1>
 <p>Find me in app/views/match_tickets/show.html.erb</p>
 
-
-<%= @ticket.price %>
-<%= @ticket.seat.number %>
-<%= @ticket.seat.description %>
-<%= @ticket.seat.stadium %>
-<%#= @ticket.seat.view %>
-<%= link_to "Book Now", new_booking_path  %>
+  <%= @ticket.price %>
+  <%= @ticket.seat.number %>
+  <%= @ticket.seat.description %>
+  <%= @ticket.seat.stadium %>
+  <%#= @ticket.seat.view %>
+  <%= link_to "Book Now", new_booking_path  %>

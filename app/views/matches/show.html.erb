@@ -4,10 +4,13 @@
 <h2> <%=@match.date %></h2>
 
 <% @tickets.each do |ticket| %>
-<p><%= ticket.seat.number %>
-  <%= ticket.seat.stadium %>
-  <%= ticket.price %>
-  <%= link_to "Buy Ticket", match_match_ticket_path(@match, ticket)%>
-</p>
+  <% if !ticket.sold %>
+    <p>
+      <%= ticket.seat.number %>
+      <%= ticket.seat.stadium %>
+      <%= ticket.price %>
+      <%= link_to "Buy Ticket", match_match_ticket_path(@match, ticket)%>
+    </p>
+  <% end %>
 <% end %>
 
