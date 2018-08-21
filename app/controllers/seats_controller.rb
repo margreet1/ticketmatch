@@ -2,6 +2,7 @@ class SeatsController < ApplicationController
 
   def create
     @seat = Seat.new(seat_params)
+    @seat.user = current_user
     authorize @seat
     if @seat.save
       redirect_to dashboard_path
