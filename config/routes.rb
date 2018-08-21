@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :match, only: [:index, :show] do
+  resources :matches, only: [:index, :show] do
     resources :match_tickets, only: [:show, :new, :create, :edit, :update, :destroy]
   end
-  resources :user, only: [:show] do
-    resources :seat, only: [:new, :create]
-    resources :booking, only: [:new, :create]
+  resources :users, only: [:show] do
+    resources :seats, only: [:new, :create]
+    resources :bookings, only: [:new, :create]
   end
 
   # get 'matches', to: 'match#index'
