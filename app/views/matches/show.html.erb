@@ -3,15 +3,3 @@
 
 <h1><%= @match.home_team %> vs <%= @match.away_team %></h1>
 <h2> <%=@match.date %></h2>
-
-<% @tickets.each do |ticket| %>
-  <% if !ticket.sold %>
-    <p>
-      <%= ticket.seat.number %>
-      <%= ticket.seat.stadium %>
-      <%= ticket.price %>
-      <%= link_to "Buy Ticket", match_match_ticket_path(@match, ticket)%>
-    </p>
-  <% end %>
-<% end %>
-
