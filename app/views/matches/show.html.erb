@@ -1,3 +1,12 @@
 <h2>This is a show page for a particular match</h2>
 
-<%= @match.home_team %>
+<h1><%= @match.home_team %> vs <%= @match.away_team %></h1>
+<h2> <%=@match.date %></h2>
+
+<% @tickets.each do |ticket| %>
+<p><%= ticket.seat.number %>
+  <%= ticket.seat.stadium %>
+  <%= ticket.price %>
+</p>
+<% end %>
+
