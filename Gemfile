@@ -29,4 +29,6 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
   # add devise for authentication
+  gem 'devise'
+  gem "pundit"
 end
