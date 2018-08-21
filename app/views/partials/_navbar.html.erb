@@ -1,25 +1,35 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="images/logo.png" alt="logo">
+    <%= image_tag "logo", alt: "logo" %>
   </a>
+
+  <p class="matcher">matcher</p>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Sell Seats</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">View Matches</a>
+
+    <% if current_user %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"  %>
+    <% else %>
+      <a class="navbar-wagon-item navbar-wagon-link">Please sign in</a>
+    <% end %>
+
+
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
+        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" >
+      <!-- data-toggle="dropdown"> -->
+      <!--  <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Sell Seats</a></li>
+          <li><a href="#">View Matches</a></li>
+          <li><a href="#">Sign in</a></li>
+        </ul> -->
       </div>
     </div>
   </div>
@@ -29,9 +39,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Host</a></li>
-        <li><a href="#">Trips</a></li>
-        <li><a href="#">Messagese</a></li>
+        <li><a href="#">Sell Seats</a></li>
+        <li><a href="#">View Matches</a></li>
+        <li><a href="#">Sign in</a></li>
       </ul>
     </div>
   </div>

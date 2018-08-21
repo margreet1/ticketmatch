@@ -1,10 +1,5 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render "partials/navbar" %>
+<%= render "partials/banner" %>
+<h2 class="text-center">All matches</h2>
+there are going to be lots of cards here eventually
 
-<% if current_user %>
-<p>signed in</p>
-<% else %>
-<p>please sign in</p>
-<% end %>
-
-<%= link_to "sign out", destroy_user_session_path, method: :delete  %>
