@@ -1,5 +1,10 @@
 class MatchTicketsController < ApplicationController
 
+  def show
+    @ticket = MatchTicket.find(params[:id])
+    authorize @ticket
+  end
+
   def create
   end
 
@@ -12,8 +17,6 @@ class MatchTicketsController < ApplicationController
   def update
   end
 
-  def show
-  end
 
   def destroy
   end
