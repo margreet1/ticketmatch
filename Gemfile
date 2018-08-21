@@ -19,6 +19,7 @@ gem 'webpacker'
 gem 'devise'
 # gem to get api information
 gem 'unirest'
+gem "pundit"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
