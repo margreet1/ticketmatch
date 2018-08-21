@@ -17,9 +17,9 @@ gem 'uglifier'
 gem 'webpacker'
 # add devise for authentication
 gem 'devise'
+gem 'pundit'
 # gem to get api information
 gem 'unirest'
-gem "pundit"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -33,3 +33,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+
