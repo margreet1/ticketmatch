@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   resources :matches, only: [:index, :show] do
     resources :match_tickets, only: [:show, :new, :create, :edit, :update, :destroy]
   end
-  resources :users, only: [:show] do
-    resources :seats, only: [:new, :create]
-    resources :bookings, only: [:new, :create]
-  end
+
+  resources :seats, only: [:new, :create]
+  resources :bookings, only: [:new, :create]
+
+  get 'dashboard', to: 'pages#dashboard'
 
   # get 'matches', to: 'match#index'
   # get 'matches/:id', to: 'match#show'
