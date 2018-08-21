@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'unirest'
+
+response = Unirest.get "https://api-football-v1.p.mashape.com/fixtures/league/2",
+  headers:{
+    "X-Mashape-Key" => ENV["MATCH_API"],
+    "Accept" => "application/json"
+  }
+
+Match.destroy_all
+puts "creating matches"
+response.body['api']['fixtures'].each do |fixture|
+  Match.create!(
+    home_team: fixture.second["homeTeam"],
+    away_team: fixture.second["awayTeam"],
+    date: fixture.second["event_date"]
+  )
+  puts "match created"
+end
+puts "all done"

@@ -15,9 +15,11 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+# add devise for authentication
 gem 'devise'
 gem 'pundit'
-
+# gem to get api information
+gem 'unirest'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
