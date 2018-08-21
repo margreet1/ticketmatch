@@ -1,8 +1,7 @@
 class Booking < ApplicationRecord
-  belongs_to :user
-  belongs_to :match_ticket
+  belongs_to :buyer, class_name: 'User', foreign_key: :user_id
+  belongs_to :seat
+  belongs_to :match
+  has_one :seller, through: :seat, source: :user
 
-  def seller
-    self.match_ticket.seat.user
-  end
 end

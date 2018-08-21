@@ -1,3 +1,26 @@
 <%= render "partials/navbar" %>
 <h1>This is your dashboard!</h1>
+
 <%= current_user.first_name %>
+
+
+
+<p> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary btn-lg" %> </p>
+
+
+<div class="container">
+  <div class="row">
+  <div class="row">
+    <% @seats.each do |seat| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="">
+            <h2><%= seat.number %></h2>
+            <p><%= seat.description %></p>
+            <p><%= seat.view %></p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+
