@@ -8,3 +8,6 @@
 <% end %>
 
 <%= link_to "sign out", destroy_user_session_path, method: :delete  %>
+
+<%= render "partials/cards" %>
+<%= link_to "match", match_match_ticket_path(@match, @match_ticket) %>
