@@ -12,7 +12,28 @@ class SeatsController < ApplicationController
   end
 
   def new
+    @teams = ["Manchester United",
+ "Newcastle",
+ "Bournemouth",
+ "Fulham",
+ "Huddersfield",
+ "Watford",
+ "Wolverhampton",
+ "Liverpool",
+ "Southampton",
+ "Arsenal",
+ "Cardiff",
+ "West Ham",
+ "Tottenham",
+ "Leicester",
+ "Everton",
+ "Chelsea",
+ "Burnley",
+ "Manchester City",
+ "Brighton",
+ "Crystal Palace"]
     @seat = Seat.new
+    @matches = Match.all
     authorize @seat
   end
 
@@ -21,8 +42,7 @@ class SeatsController < ApplicationController
 
   private
   def seat_params
-    params.require(:seat).permit(:number, :description, :view)
+    params.require(:seat).permit(:number, :description, :view, :team)
   end
-
 
 end

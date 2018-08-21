@@ -61,13 +61,35 @@ user1 = User.first.id
 user2 = User.second.id
 user3 = User.last.id
 
+ teams = ["Manchester United",
+ "Newcastle",
+ "Bournemouth",
+ "Fulham",
+ "Huddersfield",
+ "Watford",
+ "Wolverhampton",
+ "Liverpool",
+ "Southampton",
+ "Arsenal",
+ "Cardiff",
+ "West Ham",
+ "Tottenham",
+ "Leicester",
+ "Everton",
+ "Chelsea",
+ "Burnley",
+ "Manchester City",
+ "Brighton",
+ "Crystal Palace"]
+
 Seat.destroy_all
 puts "creating seasts"
-10.times do
+100.times do
   Seat.create!(
     number: Faker::Number.hexadecimal(3),
     description: ["Great seat", "Fantastic view", "View the game from a distance", "Boxes, free snacks included", "Loudest crowd in England", "Great atmosphere"].sample,
-    user_id: [user1, user2].sample
+    user_id: [user1, user2].sample,
+    team: teams.sample
   )
 end
 puts "seats made"

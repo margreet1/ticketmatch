@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_160549) do
     t.string "stadium"
     t.string "description"
     t.string "view"
+    t.string "team"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
