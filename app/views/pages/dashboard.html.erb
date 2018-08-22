@@ -1,44 +1,44 @@
 
-<h1>This is your dashboard!</h1>
+<!-- <h1>This is your dashboard!</h1> -->
 
-<h2 class="text-center">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></h2>
+<h1 class="text-center">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></h1>
 
-<p> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary btn-lg" %> </p>
+
 
 
 <div class="container">
   <div class="row">
-  <div class="row">
-    <% @seats.each do |seat| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="col-xs-12 col-sm-6">
+      <h2>Your Season Tickets</h2>
+      <% @seats.each do |seat| %>
+        <div class="col-xs-12 col-md-6">
           <div class="">
-            <h2>Your Home Team: <%= seat.team %></h2>
-            <h2><%= seat.number %></h2>
+            <h3>Home Team: <%= seat.team %></h3>
+            <h4><%= seat.number %></h4>
             <p><%= seat.description %></p>
             <p><%= seat.view %></p>
-            <p><%= seat.price %></p>
+            <p>£ <%= seat.price %></p>
           </div>
-      </div>
-    <% end %>
-  </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <h2>Your Bookings</h2>
+      <% @bookings.each do |booking| %>
+        <div class="col-xs-12 col-md-6">
+          <div class="">
+            <h3>Home Team: <%= booking.seat.team %></h3>
+            <h4><%= booking.seat.number %></h4>
+            <p><%= booking.seat.description %></p>
+            <p><%= booking.seat.view %></p>
+            <p>£ <%= booking.seat.price %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+      <p> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary btn-lg" %> </p>
   </div>
 </div>
 
-<!-- <div class="container">
-  <div class="row">
-  <div class="row">
-    <% @bookings.each do |seat| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="">
-            <h2>Home Team: <%= seat.team %></h2>
-            <h2><%= seat.number %></h2>
-            <p><%= seat.description %></p>
-            <p><%= seat.view %></p>
-            <p><%= seat.price %></p>
-          </div>
-      </div>
-    <% end %>
-  </div>
-  </div>
-</div>
- -->
+<h1><%= @sold_tickets %></h1>

@@ -23,7 +23,6 @@
 
         <li class="product">
 
-
           <div class="product-upvote text-center">
             <p id="seat">seat</p>
             <p><%= seat.number %></p>
@@ -37,10 +36,11 @@
           </div>
 
           <ul class="list-inline product-controls">
-            <%= link_to "Book now", dashboard_path, class: "btn btn-primary" %>
+            <%= link_to "Book", match_bookings_path(@match, seat_id: seat.id), method: :post, class: "btn btn-primary" %>
           </ul>
         </li>
         <% end %>
+
       </ul>
     </div>
 

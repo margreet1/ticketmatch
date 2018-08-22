@@ -17,8 +17,15 @@ class MatchesController < ApplicationController
   end
 
   def show
+
     @match = Match.find(params[:id])
     authorize @match
-    @seats = Seat.where(team: @match.home_team)
+    seats = Seat.where(team: @match.home_team)
+    @seats = []
+    seats.each do |seat|
+      unless Booking.where("match_id = ? and seat_id = ?", @match.id, seat.id).length > 0
+        @seats << seat
+      end
+    end
   end
 end
