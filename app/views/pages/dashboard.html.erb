@@ -1,9 +1,5 @@
 <%= render "partials/navbar" %>
-<h1>This is your dashboard!</h1>
-
-<%= current_user.first_name %>
-
-
+<h2 class="text-center">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></h2>
 
 <p> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary btn-lg" %> </p>
 
