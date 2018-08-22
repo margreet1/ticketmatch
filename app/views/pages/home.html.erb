@@ -1,4 +1,12 @@
 <%= render "partials/banner" %>
 <h2 class="text-center">All matches</h2>
-there are going to be lots of cards here eventually
 
+(this will be a set of cards eventually, rather than a list)
+
+
+<ul>
+<% @matches.each do |match| %>
+  <li><%= match.date %> - <%= match.home_team %> (HOME) vs. <%= match.away_team %> (AWAY)
+    </li>
+<% end %>
+</ul>
