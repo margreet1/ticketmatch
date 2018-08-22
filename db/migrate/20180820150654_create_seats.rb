@@ -6,6 +6,7 @@ class CreateSeats < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :view
       t.string :team
+      t.integer :price
       t.references :user, foreign_key: true
 
       t.timestamps
