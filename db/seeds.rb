@@ -9,26 +9,26 @@ response = Unirest.get "https://api-football-v1.p.mashape.com/fixtures/league/2"
   }
 
 stadiums = {
-  "Manchester United" => "https://cdn.pixabay.com/photo/2017/01/06/22/48/old-trafford-1959155_960_720.jpg",
-  "Chelsea" => "https://cdn.pixabay.com/photo/2015/04/06/11/55/stadium-709181__340.jpg",
-  "Liverpool" => "https://cdn.pixabay.com/photo/2015/07/19/20/04/anfield-851936_960_720.jpg",
-  "Arsenal" => "https://cdn.pixabay.com/photo/2016/08/11/05/29/arsenal-1584845_960_720.jpg",
-  "Manchester City" => "https://cdn.pixabay.com/photo/2017/09/18/11/18/manchester-city-2761407_960_720.jpg",
-  "Tottenham" => "https://cdn.pixabay.com/photo/2017/08/30/23/42/football-2698974_960_720.jpg",
-  "Everton" => "https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568903__340.jpg",
-  "Leicester" => "https://cdn.pixabay.com/photo/2018/07/27/19/25/football-3566688_960_720.jpg",
-  "West Ham" => "https://cdn.pixabay.com/photo/2018/07/27/19/27/football-3566695_960_720.jpg",
-  "Newcastle" => "https://cdn.pixabay.com/photo/2018/07/27/19/26/football-3566693_960_720.jpg",
-  "Crystal Palace" => "https://cdn.pixabay.com/photo/2018/06/12/20/17/football-3471402_960_720.jpg",
-  "Southampton" => "https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568907_960_720.jpg",
-  "Fulham" => "https://cdn.pixabay.com/photo/2017/04/16/19/22/football-2235603__340.jpg",
-  "Wolverhampton" => "https://cdn.pixabay.com/photo/2018/07/28/20/45/football-3568910__340.jpg",
-  "Burnley" => "https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568904_960_720.jpg",
-  "Bournemouth" => "https://cdn.pixabay.com/photo/2014/10/14/20/24/the-ball-488709_960_720.jpg",
-  "Watford" => "https://cdn.pixabay.com/photo/2014/10/14/20/24/the-ball-488709_960_720.jpg",
-  "Cardiff" => "https://cdn.pixabay.com/photo/2014/10/14/20/24/the-ball-488709_960_720.jpg",
-  "Huddersfield" => "https://cdn.pixabay.com/photo/2014/10/14/20/24/the-ball-488709_960_720.jpg",
-  "Brighton" => "https://cdn.pixabay.com/photo/2014/10/14/20/24/the-ball-488709_960_720.jpg",
+  "Manchester United" => "manchester_united.jpg",
+  "Chelsea" => "chelsea.jpg",
+  "Liverpool" => "liverpool.jpg",
+  "Arsenal" => "arsenal.jpg",
+  "Manchester City" => "manchester_city.jpg",
+  "Tottenham" => "tottenham.jpg",
+  "Everton" => "everton.jpg",
+  "Leicester" => "leicester.jpg",
+  "West Ham" => "west_ham.jpg",
+  "Newcastle" => "newcastle.jpg",
+  "Crystal Palace" => "crystal_palace.jpg",
+  "Southampton" => "southampton.jpg",
+  "Fulham" => "fulham.jpg",
+  "Wolverhampton" => "wolverhampton.jpg",
+  "Burnley" => "burnley.jpg",
+  "Bournemouth" => "bournemouth.jpg",
+  "Watford" => "watford.jpg",
+  "Cardiff" => "cardiff.jpg",
+  "Huddersfield" => "huddersfield.jpg",
+  "Brighton" => "brighton.jpg",
 }
 
 Match.destroy_all
@@ -83,7 +83,7 @@ user3 = User.last.id
  "Crystal Palace"]
 
 Seat.destroy_all
-puts "creating seasts"
+puts "creating seats"
 100.times do
   Seat.create!(
     number: Faker::Number.hexadecimal(3),
