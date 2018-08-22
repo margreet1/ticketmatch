@@ -12,9 +12,11 @@
     <% @seats.each do |seat| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="">
+            <h2>Your Home Team: <%= seat.team %></h2>
             <h2><%= seat.number %></h2>
             <p><%= seat.description %></p>
             <p><%= seat.view %></p>
+            <p><%= seat.price %></p>
           </div>
       </div>
     <% end %>
@@ -22,3 +24,21 @@
   </div>
 </div>
 
+<!-- <div class="container">
+  <div class="row">
+  <div class="row">
+    <% @bookings.each do |seat| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="">
+            <h2>Home Team: <%= seat.team %></h2>
+            <h2><%= seat.number %></h2>
+            <p><%= seat.description %></p>
+            <p><%= seat.view %></p>
+            <p><%= seat.price %></p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+ -->
