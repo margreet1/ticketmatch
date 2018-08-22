@@ -1,13 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render "partials/navbar" %>
+<%= render "partials/banner" %>
+<h2 class="text-center">All matches</h2>
 
-<% if current_user %>
-<p>signed in</p>
-<% else %>
-<p>please sign in</p>
+(this will be a set of cards eventually, rather than a list)
+
+
+<ul>
+<% @matches.each do |match| %>
+  <li><%= match.date %> - <%= match.home_team %> (HOME) vs. <%= match.away_team %> (AWAY)
+    </li>
 <% end %>
-
-<%= link_to "sign out", destroy_user_session_path, method: :delete  %>
-
-<%= render "partials/cards" %>
-<%= link_to "match", match_match_ticket_path(@match, @match_ticket) %>
+</ul>

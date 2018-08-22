@@ -20,6 +20,8 @@ gem 'devise'
 gem 'pundit'
 # gem to get api information
 gem 'unirest'
+#populate database
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -10,29 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_151326) do
+ActiveRecord::Schema.define(version: 2018_08_21_160549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "match_ticket_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["match_ticket_id"], name: "index_bookings_on_match_ticket_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
-  create_table "match_tickets", force: :cascade do |t|
     t.string "price"
     t.boolean "sold", default: false
     t.bigint "seat_id"
     t.bigint "match_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["match_id"], name: "index_match_tickets_on_match_id"
-    t.index ["seat_id"], name: "index_match_tickets_on_seat_id"
+    t.index ["match_id"], name: "index_bookings_on_match_id"
+    t.index ["seat_id"], name: "index_bookings_on_seat_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -41,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_151326) do
     t.string "away_team"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "seats", force: :cascade do |t|
@@ -48,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_151326) do
     t.string "stadium"
     t.string "description"
     t.string "view"
+    t.string "team"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -68,9 +63,8 @@ ActiveRecord::Schema.define(version: 2018_08_20_151326) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "match_tickets"
+  add_foreign_key "bookings", "matches"
+  add_foreign_key "bookings", "seats"
   add_foreign_key "bookings", "users"
-  add_foreign_key "match_tickets", "matches"
-  add_foreign_key "match_tickets", "seats"
   add_foreign_key "seats", "users"
 end
