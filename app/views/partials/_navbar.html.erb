@@ -9,7 +9,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if current_user %>
-      <%= link_to "Sell Seats", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "View Matches", matches_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"  %>
     <% else %>
@@ -18,16 +18,18 @@
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
-     <!--  <div class="dropdown"> -->
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" >
+     <div class="dropdown">
+       <!--  <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" > -->
+<!--         <a href="/" class="avatar">
+ -->          <%= image_tag "user-shape.png", alt: "avatar", class: "avatar-logo" %>
       <!-- data-toggle="dropdown"> -->
       <!--  <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Sell Seats</a></li>
           <li><a href="#">View Matches</a></li>
           <li><a href="#">Sign in</a></li>
         </ul> -->
-<!--       </div>
- -->    </div>
+          </div>
+    </div>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
@@ -36,7 +38,7 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if current_user %>
-          <li><%= link_to "Sell Seats", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Dashboard", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "View Matches", matches_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"  %></li>
         <% else %>
