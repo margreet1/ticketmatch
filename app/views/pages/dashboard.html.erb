@@ -1,8 +1,22 @@
 <%= render "partials/navbar" %>
 <h2 class="text-center">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></h2>
 
-<% form_for %>
+<p> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary btn-lg" %> </p>
 
-<%= current_user.seats.each do |seat| %>
-<%= seat %>
-<% end %>
+
+<div class="container">
+  <div class="row">
+  <div class="row">
+    <% @seats.each do |seat| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="">
+            <h2><%= seat.number %></h2>
+            <p><%= seat.description %></p>
+            <p><%= seat.view %></p>
+          </div>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+

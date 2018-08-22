@@ -6,7 +6,7 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find(params[:id])
-    @tickets = @match.match_tickets
     authorize @match
+    @seats = Seat.where(team: @match.home_team)
   end
 end

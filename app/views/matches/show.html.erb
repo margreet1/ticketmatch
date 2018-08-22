@@ -16,14 +16,11 @@
   </div>
 </div>
 
-<% @tickets.each do |ticket| %>
-  <% if !ticket.sold %>
-    <p>
-      <%= ticket.seat.number %>
-      <%= ticket.seat.stadium %>
-      <%= ticket.price %>
-      <%= link_to "Buy Ticket", match_match_ticket_path(@match, ticket)%>
-    </p>
+
+<ul class="list-inline">
+  <% @seats.each do |seat| %>
+    <li><%= seat.number %></li>
+    <li><%= seat.description %></li>
   <% end %>
-<% end %>
+</ul>
 

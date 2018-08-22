@@ -61,13 +61,35 @@ user1 = User.first.id
 user2 = User.second.id
 user3 = User.last.id
 
+ teams = ["Manchester United",
+ "Newcastle",
+ "Bournemouth",
+ "Fulham",
+ "Huddersfield",
+ "Watford",
+ "Wolverhampton",
+ "Liverpool",
+ "Southampton",
+ "Arsenal",
+ "Cardiff",
+ "West Ham",
+ "Tottenham",
+ "Leicester",
+ "Everton",
+ "Chelsea",
+ "Burnley",
+ "Manchester City",
+ "Brighton",
+ "Crystal Palace"]
+
 Seat.destroy_all
 puts "creating seasts"
-10.times do
+100.times do
   Seat.create!(
     number: Faker::Number.hexadecimal(3),
     description: ["Great seat", "Fantastic view", "View the game from a distance", "Boxes, free snacks included", "Loudest crowd in England", "Great atmosphere"].sample,
-    user_id: [user1, user2].sample
+    user_id: [user1, user2].sample,
+    team: teams.sample
   )
 end
 puts "seats made"
@@ -77,38 +99,25 @@ seat2 = Seat.second.id
 seat3 = Seat.third.id
 seat4 = Seat.last.id
 
-puts "making tickets"
+puts "making booking"
 
-MatchTicket.destroy_all
+Booking.create!(price: Faker::Commerce.price, seat_id: seat1, match_id: match1, user_id: user3)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat2, match_id: match1, user_id: user3)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat3, match_id: match1, user_id: user3)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat4, match_id: match1, user_id: user3)
 
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat1, match_id: match1)
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat2, match_id: match1)
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat3, match_id: match1)
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat4, match_id: match1)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat1, match_id: match2, user_id: user3)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat2, match_id: match2, user_id: user3)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat3, match_id: match2, user_id: user3)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat4, match_id: match2, user_id: user3)
 
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat1, match_id: match2)
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat2, match_id: match2)
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat3, match_id: match2)
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat4, match_id: match2)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat1, match_id: match3, user_id: user3)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat2, match_id: match3, user_id: user3)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat3, match_id: match3, user_id: user3)
+Booking.create!(price: Faker::Commerce.price, seat_id: seat4, match_id: match3, user_id: user3)
 
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat1, match_id: match3)
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat2, match_id: match3)
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat3, match_id: match3)
-MatchTicket.create!(price: Faker::Commerce.price, seat_id: seat4, match_id: match3)
+puts "bookings made"
 
-puts "tickets made"
-
-sold1 = MatchTicket.first.id
-sold2 = MatchTicket.second.id
-sold3 = MatchTicket.last.id
-
-puts "making bookings"
-
-Booking.create(user_id: user3, match_ticket_id: sold1)
-Booking.create(user_id: user3, match_ticket_id: sold2)
-Booking.create(user_id: user3, match_ticket_id: sold3)
-
-puts "bookings made "
 
 
 
