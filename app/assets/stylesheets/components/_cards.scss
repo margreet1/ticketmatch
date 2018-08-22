@@ -1,4 +1,5 @@
 .card {
+  transition-duration: 0.5s;
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -6,6 +7,12 @@
   color: white;
   position: relative;
   border-radius: 5px;
+  margin: 8px;
+}
+.card:hover {
+  transition-duration: 0.5s;
+  margin-right: -8px;
+  margin-left: -8px;
 }
 .card-user {
   position: absolute;
@@ -25,6 +32,7 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+  padding: 8px;
 }
 .card-description h2 {
   font-size: 24px;
@@ -46,4 +54,5 @@
 }
 .card-link:hover {
   opacity: 0.1;
+  margin: 8px, -8px;
 }

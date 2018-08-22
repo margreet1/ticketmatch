@@ -1,10 +1,4 @@
 <h2 class="text-center">All matches</h2>
-<h2>This is going to be a page with a list of all the matches</h2>
+<h3 class="text-center">Click on a match to buy tickets</h3>
 
-
-
-<ul>
-  <% @matches.each do |match| %>
-    <li><%= match.home_team %> vs <%= match.away_team %> on <%= match.date %></li> <%= link_to "See Available Tickets", match_path(match)  %>
-  <% end %>
-</ul>
+<%= render "partials/match_cards" %>

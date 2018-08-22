@@ -1,12 +1,24 @@
 <%= render "partials/banner" %>
-<h2 class="text-center">All matches</h2>
+<h2 class="text-center">Upcoming matches</h2>
 
-(this will be a set of cards eventually, rather than a list)
+<div class="wrapper-blue">
+  <div class="container">
+    <div class="row">
+      <% @matches[0..8].each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1530177245316-034d99cd7b4b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=32ef7c3651656cef40fcb239bb9a8eb6&auto=format&fit=crop&w=967&q=80');">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
+<h3 class="text-center">We have hundreds more matches - <%= link_to "click here to see them all", matches_path %></h3>
 
-<ul>
-<% @matches.each do |match| %>
-  <li><%= match.date %> - <%= match.home_team %> (HOME) vs. <%= match.away_team %> (AWAY)
-    </li>
-<% end %>
-</ul>
