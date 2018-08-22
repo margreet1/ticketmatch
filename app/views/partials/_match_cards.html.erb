@@ -1,7 +1,8 @@
 <div class="wrapper-blue">
   <div class="container">
+    <h3 class="text-center">August Matches</h3>
     <div class="row">
-      <% @matches.each do |match| %>
+      <% @august_matches.each do |match| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
 <!--           <div class="card-category"></div> -->
@@ -14,6 +15,144 @@
       </div>
       <% end %>
     </div>
+    <h3 class="text-center">September Matches</h3>
+    <div class="row">
+      <% @september_matches.each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <h3 class="text-center">October Matches</h3>
+    <div class="row">
+      <% @october_matches.each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <h3 class="text-center">November Matches</h3>
+    <div class="row">
+      <% @november_matches.each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <h3 class="text-center">December Matches</h3>
+    <div class="row">
+      <% @december_matches.each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <h3 class="text-center">January Matches</h3>
+    <div class="row">
+      <% @january_matches.each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <h3 class="text-center">February Matches</h3>
+    <div class="row">
+      <% @february_matches.each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <h3 class="text-center">March Matches</h3>
+    <div class="row">
+      <% @march_matches.each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <h3 class="text-center">April Matches</h3>
+    <div class="row">
+      <% @april_matches.each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <h3 class="text-center">May Matches</h3>
+    <div class="row">
+      <% @may_matches.each do |match| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
+<!--           <div class="card-category"></div> -->
+          <div class="card-description">
+            <%= match.date %>
+            <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
+          </div>
+          <%= link_to "", match_path(match), class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+<!-- missed june and july -->
+
   </div>
 </div>
 

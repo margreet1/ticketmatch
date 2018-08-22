@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2018_08_21_160549) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.string "price"
     t.boolean "sold", default: false
     t.bigint "seat_id"
     t.bigint "match_id"
@@ -43,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_160549) do
     t.string "description"
     t.string "view"
     t.string "team"
+    t.integer "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
