@@ -22,6 +22,7 @@
   <% @seats.each do |seat| %>
     <li><%= seat.number %></li>
     <li><%= seat.description %></li>
+    <li><%= link_to "Book", match_bookings_path(@match, seat_id: seat.id), method: :post %></li>
   <% end %>
 </ul>
 
