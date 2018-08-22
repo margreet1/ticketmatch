@@ -33,7 +33,6 @@ stadiums = {
 
 Match.destroy_all
 puts "creating matches"
-p response
 response.body['api']['fixtures'].each do |fixture|
   Match.create!(
     home_team: fixture.second["homeTeam"],
