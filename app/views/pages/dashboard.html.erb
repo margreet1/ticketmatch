@@ -4,8 +4,6 @@
 <h1 class="text-center">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></h1>
 
 
-
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6">
@@ -41,4 +39,10 @@
   </div>
 </div>
 
-<h1><%= @sold_tickets %></h1>
+<div class="text-center">
+  <h2>Sales history</h2>
+  <% @sold_tickets.each do |ticket| %>
+    <h4>You sold your ticket for <%= ticket.match.date %>, <%= ticket.match.home_team %> vs <%= ticket.match.away_team %> to <%= ticket.buyer.first_name %> <%= ticket.buyer.last_name %> for £<%= ticket.seat.price %>. </h4>
+  <% end %>
+</div>
+
