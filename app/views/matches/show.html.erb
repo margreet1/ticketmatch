@@ -1,7 +1,7 @@
 
 <h2>This is a show page for a particular match</h2>
 
-<div class="match_banner" style='background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url("<%= @match.photo %>");'>
+<div class="match_banner" style='background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path @match.photo %>);'>
   <div class="banner-content">
     <h4 class="text-center"><%= @match.date %></h4>
     <div class="flexbox text-center">
