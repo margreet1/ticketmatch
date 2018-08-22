@@ -1,0 +1,15 @@
+.sidebar {
+  padding-right: 0px;
+  margin-left: 0px;
+  position: sticky;
+  top: 100px;
+  text-align: center;
+  & li {
+    text-align: left;
+  }
+  font-size: 14px;
+  & .sidebar_row {
+    list-style-type: none;
+  }
+}
+

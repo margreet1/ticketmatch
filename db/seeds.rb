@@ -89,7 +89,9 @@ puts "creating seats"
     number: Faker::Number.hexadecimal(3),
     description: ["Great seat", "Fantastic view", "View the game from a distance", "Boxes, free snacks included", "Loudest crowd in England", "Great atmosphere"].sample,
     user_id: [user1, user2].sample,
-    team: teams.sample
+    team: teams.sample,
+    # price: Faker::Commerce.price
+    price: [40, 50, 60, 70, 80, 90, 100, 120, 150].sample
   )
 end
 puts "seats made"
@@ -101,20 +103,20 @@ seat4 = Seat.last.id
 
 puts "making booking"
 
-Booking.create!(price: Faker::Commerce.price, seat_id: seat1, match_id: match1, user_id: user3)
-Booking.create!(price: Faker::Commerce.price, seat_id: seat2, match_id: match1, user_id: user3)
-Booking.create!(price: Faker::Commerce.price, seat_id: seat3, match_id: match1, user_id: user3)
-Booking.create!(price: Faker::Commerce.price, seat_id: seat4, match_id: match1, user_id: user3)
+Booking.create!(seat_id: seat1, match_id: match1, user_id: user3)
+Booking.create!(seat_id: seat2, match_id: match1, user_id: user3)
+Booking.create!(seat_id: seat3, match_id: match1, user_id: user3)
+Booking.create!(seat_id: seat4, match_id: match1, user_id: user3)
 
-Booking.create!(price: Faker::Commerce.price, seat_id: seat1, match_id: match2, user_id: user3)
-Booking.create!(price: Faker::Commerce.price, seat_id: seat2, match_id: match2, user_id: user3)
-Booking.create!(price: Faker::Commerce.price, seat_id: seat3, match_id: match2, user_id: user3)
-Booking.create!(price: Faker::Commerce.price, seat_id: seat4, match_id: match2, user_id: user3)
+Booking.create!(seat_id: seat1, match_id: match2, user_id: user3)
+Booking.create!(seat_id: seat2, match_id: match2, user_id: user3)
+Booking.create!(seat_id: seat3, match_id: match2, user_id: user3)
+Booking.create!(seat_id: seat4, match_id: match2, user_id: user3)
 
-Booking.create!(price: Faker::Commerce.price, seat_id: seat1, match_id: match3, user_id: user3)
-Booking.create!(price: Faker::Commerce.price, seat_id: seat2, match_id: match3, user_id: user3)
-Booking.create!(price: Faker::Commerce.price, seat_id: seat3, match_id: match3, user_id: user3)
-Booking.create!(price: Faker::Commerce.price, seat_id: seat4, match_id: match3, user_id: user3)
+Booking.create!(seat_id: seat1, match_id: match3, user_id: user3)
+Booking.create!(seat_id: seat2, match_id: match3, user_id: user3)
+Booking.create!(seat_id: seat3, match_id: match3, user_id: user3)
+Booking.create!(seat_id: seat4, match_id: match3, user_id: user3)
 
 puts "bookings made"
 
