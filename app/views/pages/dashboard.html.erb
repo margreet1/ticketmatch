@@ -1,41 +1,38 @@
-
-<!-- <h1>This is your dashboard!</h1> -->
-
 <h1 class="text-center">Welcome, <%= current_user.first_name %> <%= current_user.last_name %></h1>
-
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <h2>Your Season Tickets</h2>
+    <div class="col-xs-12 col-md-6">
+      <h2 class="text-center">Your Season Tickets</h2>
       <% @seats.each do |seat| %>
-        <div class="col-xs-12 col-md-6">
-          <div class="">
-            <h3>Home Team: <%= seat.team %></h3>
-            <h4><%= seat.number %></h4>
-            <p><%= seat.description %></p>
-            <p><%= seat.view %></p>
-            <p>£ <%= seat.price %></p>
-          </div>
+      <div class="dashboard-card dashboard-seat-card text-center">
+        <div class="dashboard-card-category">
+          <h3><%= seat.team %></h3>
         </div>
+        <div class="dashboard-card-description">
+          <p><%= seat.number %>, <%= seat.description %></p>
+          <p>£ <%= seat.price %></p>
+        </div>
+      </div>
       <% end %>
+      <p class="text-center"> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary" %> </p>
     </div>
-
-    <div class="col-xs-12 col-sm-6">
-      <h2>Your Bookings</h2>
+    <div class="col-xs-12 col-md-6">
+      <h2 class="text-center">Your Bookings</h2>
       <% @bookings.each do |booking| %>
-        <div class="col-xs-12 col-md-6">
-          <div class="">
-            <h3>Home Team: <%= booking.seat.team %></h3>
-            <h4><%= booking.seat.number %></h4>
-            <p><%= booking.seat.description %></p>
-            <p><%= booking.seat.view %></p>
-            <p>£ <%= booking.seat.price %></p>
-          </div>
+      <div class="dashboard-card dashboard-booking-card text-center">
+        <div class="dashboard-card-category">
+          <h3><%= booking.seat.team %></h3>
         </div>
+        <div class="dashboard-card-description">
+          <p>are playing at home against <%= booking.match.away_team %>.</p>
+          <p>Your seat number: <%= booking.seat.number %>. <%= booking.seat.description %>.</p>
+          <p>£<%= booking.seat.price %></p>
+        </div>
+      </div>
       <% end %>
+      <p class="text-center"> <%= link_to "Book another match", matches_path, class: "btn btn-warning" %> </p>
     </div>
-      <p> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary btn-lg" %> </p>
   </div>
 </div>
 

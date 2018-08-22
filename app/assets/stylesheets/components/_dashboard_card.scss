@@ -1,0 +1,53 @@
+.dashboard-card {
+  transition-duration: 0.5s;
+  height: 150px;
+  width: 450px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  border-radius: 2px;
+  margin: 8px auto;
+}
+.dashboard-seat-card {
+  background: linear-gradient(to right, #bbd2c5, #536976);
+}
+.dashboard-booking-card {
+  background: linear-gradient(to right, #536976, #bbd2c5);
+}
+.card:hover {
+  transition-duration: 0.5s;
+  margin-right: -8px;
+  margin-left: -8px;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.dashboard-card-category {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.dashboard-card-description {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 0px;
+  line-height: 0.7;
+}
+.dashboard-card-description h2 {
+  font-size: 24px;
+}
+.dashboard-card-description p {
+  font-size: 14px;
+  opacity: 1;
+  font-weight: lighter;
+}
