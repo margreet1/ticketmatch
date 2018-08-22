@@ -9,5 +9,12 @@ class PagesController < ApplicationController
   def dashboard
     @seats = current_user.seats
     @bookings = current_user.bookings
+    @sold_tickets = []
+    sold_tickets = Booking.all
+    sold_tickets.each do |booking|
+      if booking.seat.user == current_user
+        @sold_tickets << booking
+      end
+    end
   end
 end
