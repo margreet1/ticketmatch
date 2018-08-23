@@ -4,8 +4,9 @@ class SeatsController < ApplicationController
     @seat = Seat.new(seat_params)
     @seat.user = current_user
     authorize @seat
+
     if @seat.save
-      redirect_to new_booking_path
+      redirect_to new_seat_booking_path(@seat)
     else
       render 'new'
     end

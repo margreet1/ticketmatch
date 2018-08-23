@@ -1,1 +1,34 @@
-You made it!
+<% render 'partials/footer' %>
+<div class="footer-space">
+  <h3 class="text-center">You've got a season ticket valid for all these matches:</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div>
+        <h4 class="text-center">You've got these on sale</h4>
+        <ul>
+        <% @unreserved_matches.each do |match| %>
+          <li class="keep-them">
+            <p><%= match.home_team %> vs <%= match.away_team %> (<%= match.date %>)</p>
+            <%= link_to "Keep", match_bookings_path(match, seat_id: @seat.id), method: :post, class: "btn btn-primary" %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="col-xs-12 col-sm-6">
+        <h4 class="text-center">You've got these reserved for personal use</h4>
+        <ul>
+          <% @reserved_matches.each do |match| %>
+          <li class="keep-them text-center">
+            <p><%= match.home_team %> vs <%= match.away_team %> (<%= match.date %>)</p>
+            <% booking = @seat.bookings.find { |booking| booking.match == match } %>
+            <%#= link_to "Put back on sale", booking_path(booking), method: :destroy, class: "btn btn-primary" %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

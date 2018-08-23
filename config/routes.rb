@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :matches, only: [:index, :show] do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:new, :destroy]
+  resources :bookings, only: [:destroy]
 
-  resources :seats, only: [:new, :create]
+  resources :seats, only: [:new, :create] do
+    resources :bookings, only: [:new]
+  end
 
   get 'dashboard', to: 'pages#dashboard'
 
