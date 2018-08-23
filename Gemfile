@@ -22,6 +22,12 @@ gem 'pundit'
 gem 'unirest'
 #populate database
 gem 'faker'
+#gem for image database
+gem 'cloudinary'
+# gem to upload files associated to models
+gem 'carrierwave', '~> 1.2'
+
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

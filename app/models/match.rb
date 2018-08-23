@@ -1,4 +1,4 @@
 class Match < ApplicationRecord
-  has_many :match_tickets
+  has_many :bookings
   validates_presence_of(:date, :home_team, :away_team)
 end
