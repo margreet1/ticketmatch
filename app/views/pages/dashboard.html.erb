@@ -4,6 +4,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <h2 class="text-center">Your Season Tickets</h2>
+        <p class="text-center"> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary" %> </p>
         <% @seats.each do |seat| %>
         <div class="dashboard-card dashboard-seat-card text-center">
           <div class="dashboard-card-category">
@@ -15,10 +16,10 @@
           </div>
         </div>
         <% end %>
-        <p class="text-center"> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary" %> </p>
       </div>
       <div class="col-xs-12 col-md-6">
         <h2 class="text-center">Your Bookings</h2>
+        <p class="text-center"> <%= link_to "Book another match", matches_path, class: "btn btn-warning" %> </p>
         <% @bookings.each do |booking| %>
         <div class="dashboard-card dashboard-booking-card text-center">
           <div class="dashboard-card-category">
@@ -31,13 +32,14 @@
           </div>
         </div>
         <% end %>
-        <p class="text-center"> <%= link_to "Book another match", matches_path, class: "btn btn-warning" %> </p>
       </div>
     </div>
   </div>
 
   <div class="text-center">
-    <h2>Sales history</h2>
+    <% if @sold_tickets.length > 0 %>
+      <h2>Sales history</h2>
+    <% end %>
     <% @sold_tickets.each do |ticket| %>
       <h4>You sold your ticket for <%= ticket.match.date %>, <%= ticket.match.home_team %> vs <%= ticket.match.away_team %> to <%= ticket.buyer.first_name %> <%= ticket.buyer.last_name %> for £<%= ticket.seat.price %>. </h4>
     <% end %>
