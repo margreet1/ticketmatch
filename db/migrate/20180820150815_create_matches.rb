@@ -4,7 +4,7 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.date :date
       t.string :home_team
       t.string :away_team
-
+      t.string :photo
       t.timestamps
     end
   end

@@ -2,12 +2,6 @@
 
 require 'unirest'
 
-response = Unirest.get "https://api-football-v1.p.mashape.com/fixtures/league/2",
-  headers:{
-    "X-Mashape-Key" => ENV["MATCH_API"],
-    "Accept" => "application/json"
-  }
-
 stadiums = {
   "Manchester United" => "manchester_united.jpg",
   "Chelsea" => "chelsea.jpg",
@@ -30,6 +24,12 @@ stadiums = {
   "Huddersfield" => "huddersfield.jpg",
   "Brighton" => "brighton.jpg",
 }
+
+response = Unirest.get "https://api-football-v1.p.mashape.com/fixtures/league/2",
+  headers:{
+    "X-Mashape-Key" => ENV["MATCH_API"],
+    "Accept" => "application/json"
+  }
 
 Match.destroy_all
 puts "creating matches"
@@ -90,8 +90,7 @@ puts "creating seats"
     description: ["Great seat", "Fantastic view", "View the game from a distance", "Boxes, free snacks included", "Loudest crowd in England", "Great atmosphere"].sample,
     user_id: [user1, user2].sample,
     team: teams.sample,
-    # price: Faker::Commerce.price
-    price: [40, 50, 60, 70, 80, 90, 100, 120, 150].sample
+    price: [40, 50, 60, 70, 80, 90, 100, 120, 150].sample,
   )
 end
 puts "seats made"
