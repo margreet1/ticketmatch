@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :matches, only: [:index, :show] do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:destroy]
+  resources :bookings, only: [:new, :destroy]
 
   resources :seats, only: [:new, :create]
 
