@@ -10,9 +10,7 @@ class User < ApplicationRecord
 
   # buyer journey
   has_many :bookings
-  has_many :bought_tickets, through: :bookings, source: :match_ticket
-
   # seller journey
   has_many :seats
-  has_many :selling_tickets, through: :seats, source: :match_ticket
+  # has_many :bought_tickets, through: :bookings, source: :match_ticket
 end

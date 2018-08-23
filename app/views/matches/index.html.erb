@@ -16,6 +16,13 @@
     </ul>
   </div>
   <div class="col-xs-12 col-md-11">
+    <%= form_tag matches_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a match for a home game"
+      %>
+    <% end %>
     <%= render "partials/match_cards" %>
   </div>
 </div>
