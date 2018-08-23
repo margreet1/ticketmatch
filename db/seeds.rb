@@ -90,7 +90,7 @@ puts "creating seats"
     description: ["Great seat", "Fantastic view", "View the game from a distance", "Boxes, free snacks included", "Loudest crowd in England", "Great atmosphere"].sample,
     user_id: [user1, user2].sample,
     team: teams.sample,
-    price: [40, 50, 60, 70, 80, 90, 100, 120, 150].sample
+    price: [40, 50, 60, 70, 80, 90, 100, 120, 150].sample,
   )
 end
 puts "seats made"
