@@ -20,6 +20,17 @@ class MatchesController < ApplicationController
 
     @match = Match.find(params[:id])
     authorize @match
+
+    # at the moment, on the match page, a list of seats is shown.
+    # instead, you want a list of bookings to be shown.
+    # those bookings should therefore already be created, but without a buyer saved to them.
+    # (at the moment those bookings have not yet been created)
+    # those bookings should be
+    # 1. for that particular home_team
+    # 2. unsold
+    # 3. unreserved
+
+
     seats = Seat.where(team: @match.home_team)
     @seats = []
     seats.each do |seat|
