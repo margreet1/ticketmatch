@@ -27,7 +27,11 @@
             <p id="seat">seat</p>
             <p><%= seat.number %></p>
           </div>
-          <%= cl_image_tag seat.photo, height: 120, width: 200, crop: :fill, class: "product-image img-rounded" %>
+          <% if seat.photo.url.nil? %>
+            <%= image_tag "default.jpg", height: 120, width: 200, crop: :fill, class: "product-image img-rounded" %>
+          <% else %>
+            <%= cl_image_tag seat.photo, height: 120, width: 200, crop: :fill, class: "product-image img-rounded" %>
+          <% end %>
 
           <div class="product-description">
             <h3><%= seat.description %></h3>
