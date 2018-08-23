@@ -37,7 +37,9 @@
   </div>
 
   <div class="text-center">
-    <h2>Sales history</h2>
+    <% if @sold_tickets.length > 0 %>
+      <h2>Sales history</h2>
+    <% end %>
     <% @sold_tickets.each do |ticket| %>
       <h4>You sold your ticket for <%= ticket.match.date %>, <%= ticket.match.home_team %> vs <%= ticket.match.away_team %> to <%= ticket.buyer.first_name %> <%= ticket.buyer.last_name %> for £<%= ticket.seat.price %>. </h4>
     <% end %>
