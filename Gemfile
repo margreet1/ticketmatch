@@ -22,6 +22,8 @@ gem 'pundit'
 gem 'unirest'
 #populate database
 gem 'faker'
+# get for pg_search
+gem 'pg_search'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
