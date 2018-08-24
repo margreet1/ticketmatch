@@ -14,9 +14,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    raise
-    @booking = Booking.find
-    booking = @seat.bookings.find { |booking| booking.match == match }
-    redirect_to new_seat_booking_path
+    @booking = Booking.find(params[:id])
+    @booking.delete
+    authorize @booking
+    redirect_to seat_path(@booking.seat)
   end
 end
