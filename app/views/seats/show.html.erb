@@ -23,7 +23,7 @@
           <li class="keep-them text-center">
             <p><%= match.home_team %> vs <%= match.away_team %> (<%= match.date %>)</p>
             <% booking = @seat.bookings.find { |booking| booking.match == match } %>
-            <%#= link_to "Put back on sale", booking_path(booking), method: :destroy, class: "btn btn-primary" %>
+            <%= link_to "Release", booking_path(booking), method: :delete, class: "btn btn-warning" %>
           </li>
           <% end %>
         </ul>
