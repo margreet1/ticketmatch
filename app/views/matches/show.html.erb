@@ -19,33 +19,32 @@
 </div>
 
 <div class="container">
-<h2 class="text-center">Available seats</h2>
-      <ul class="list-unstyled">
-        <% @seats.each do |seat| %>
+  <h2 class="text-center">Available seats</h2>
+  <ul class="list-unstyled">
+    <% @seats.each do |seat| %>
 
-        <li class="product">
+    <li class="product">
 
-          <div class="product-upvote text-center">
-            <p id="seat">seat</p>
-            <p><%= seat.number %></p>
-          </div>
-          <% if seat.photo.url.nil? %>
-            <%= image_tag "default.jpg", height: 120, width: 200, crop: :fill, class: "product-image img-rounded" %>
-          <% else %>
-            <%= cl_image_tag seat.photo, height: 120, width: 200, crop: :fill, class: "product-image img-rounded" %>
-          <% end %>
+      <div class="product-upvote text-center">
+        <p id="seat">seat</p>
+        <p><%= seat.number %></p>
+      </div>
+      <% if seat.photo.url.nil? %>
+        <%= image_tag "default.jpg", height: 120, width: 200, crop: :fill, class: "product-image img-rounded" %>
+      <% else %>
+        <%= cl_image_tag seat.photo, height: 120, width: 200, crop: :fill, class: "product-image img-rounded" %>
+      <% end %>
 
-          <div class="product-description">
-            <h3><%= seat.description %></h3>
-            <p>£<%= seat.price %></p>
-          </div>
+      <div class="product-description">
+        <h3><%= seat.description %></h3>
+        <p>£<%= seat.price %></p>
+      </div>
 
-          <ul class="list-inline product-controls">
-            <%= link_to "Book", match_bookings_path(@match, seat_id: seat.id), method: :post, class: "btn btn-primary" %>
-          </ul>
-        </li>
-        <% end %>
-
+      <ul class="list-inline product-controls">
+        <%= link_to "Book", match_bookings_path(@match, seat_id: seat.id), method: :post, class: "btn btn-primary" %>
       </ul>
-    </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
 

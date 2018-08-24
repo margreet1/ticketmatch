@@ -8,11 +8,12 @@ class PagesController < ApplicationController
 
   def dashboard
     @seats = current_user.seats
-    @bookings = current_user.bookings
+    all_bookings = current_user.bookings
+    @foreign_bookings = all_bookings.reject { |booking| @seats.include?(booking.seat) }
     @sold_tickets = []
     sold_tickets = Booking.all
     sold_tickets.each do |booking|
-      if booking.seat.user == current_user
+      if (booking.seller == current_user) && (booking.buyer != current_user)
         @sold_tickets << booking
       end
     end
