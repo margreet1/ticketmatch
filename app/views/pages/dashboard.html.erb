@@ -14,13 +14,14 @@
             <p><%= seat.number %>, <%= seat.description %></p>
             <p>£ <%= seat.price %></p>
           </div>
+          <%= link_to "", seat_path(seat), class: "card-link" %>
         </div>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-6">
         <h2 class="text-center">Your Bookings</h2>
         <p class="text-center"> <%= link_to "Book another match", matches_path, class: "btn btn-warning" %> </p>
-        <% @bookings.each do |booking| %>
+        <% @foreign_bookings.each do |booking| %>
         <div class="dashboard-card dashboard-booking-card text-center">
           <div class="dashboard-card-category">
             <h3><%= booking.seat.team %></h3>

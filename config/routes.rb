@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:destroy]
 
-  resources :seats, only: [:new, :create] do
-    resources :bookings, only: [:new]
+  resources :seats, only: [:new, :create, :show] do
   end
 
   get 'dashboard', to: 'pages#dashboard'

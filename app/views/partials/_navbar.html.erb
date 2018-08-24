@@ -18,11 +18,14 @@
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
-     <div class="dropdown">
+      <div class="dropdown">
+        <%= image_tag "user-shape.png", alt: "avatar", class: "avatar-logo" %>
+        <p class="font-small text-center"><%= current_user.first_name %></p>
+
+
        <!--  <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" > -->
 <!--         <a href="/" class="avatar">
- -->          <%= image_tag "user-shape.png", alt: "avatar", class: "avatar-logo" %>
-      <!-- data-toggle="dropdown"> -->
+       data-toggle="dropdown"> -->
       <!--  <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Sell Seats</a></li>
           <li><a href="#">View Matches</a></li>

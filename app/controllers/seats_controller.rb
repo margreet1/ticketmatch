@@ -6,7 +6,7 @@ class SeatsController < ApplicationController
     authorize @seat
 
     if @seat.save
-      redirect_to new_seat_booking_path(@seat)
+      redirect_to seat_path(@seat)
     else
       render 'new'
     end
@@ -39,6 +39,23 @@ class SeatsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @seat = Seat.find(params[:id])
+    team = @seat.team
+    authorize @seat
+    @matches = Match.where('home_team = ?', team)
+
+    @reserved_matches = []
+    current_user.bookings.each do |booking|
+      @reserved_matches << booking.match if @matches.include?(booking.match)
+    end
+
+    @unreserved_matches = []
+    @matches.each do |match|
+      @unreserved_matches << match unless @reserved_matches.include?(match)
+    end
+
+    @bookings = Booking.all
   end
 
   private

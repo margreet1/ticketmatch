@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2018_08_23_153850) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "reserved", default: false
     t.index ["match_id"], name: "index_bookings_on_match_id"
     t.index ["seat_id"], name: "index_bookings_on_seat_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
