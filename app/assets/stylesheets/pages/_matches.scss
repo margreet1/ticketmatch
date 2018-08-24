@@ -6,6 +6,7 @@
   text-align: center;
   & li {
     text-align: left;
+    transition-duration: 0.5s;
   }
   font-size: 14px;
   & .sidebar_row {
@@ -14,6 +15,7 @@
 }
 
 .hover-month:hover {
+  transition-duration: 0.5s;
   text-decoration: none;
   font-size: 25px;
 }
