@@ -20,7 +20,9 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <%= image_tag "user-shape.png", alt: "avatar", class: "avatar-logo" %>
-        <p class="font-small text-center"><%= current_user.first_name %></p>
+        <% if !(current_user.nil?) %>
+          <p class="font-small text-center"><%= current_user.first_name %></p>
+        <% end %>
 
 
        <!--  <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" > -->

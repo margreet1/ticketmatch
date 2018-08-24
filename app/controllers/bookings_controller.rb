@@ -13,10 +13,10 @@ class BookingsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   raise
-  #   @booking = Booking.find
-  #   booking = @seat.bookings.find { |booking| booking.match == match }
-  #   redirect_to new_seat_booking_path
-  # end
+  def destroy
+    raise
+    @booking = Booking.find
+    booking = @seat.bookings.find { |booking| booking.match == match }
+    redirect_to new_seat_booking_path
+  end
 end
