@@ -43,16 +43,16 @@ class SeatsController < ApplicationController
     @seat = Seat.find(params[:id])
     team = @seat.team
     authorize @seat
-    @matches = Match.where('home_team = ?', team)
 
+    all_matches = Match.where('home_team = ?', team)
     @reserved_matches = []
     current_user.bookings.each do |booking|
-      @reserved_matches << booking.match if @matches.include?(booking.match)
+      @reserved_matches << booking.match if all_matches.include?(booking.match)
     end
 
     @unreserved_matches = []
-    @matches.each do |match|
-      @unreserved_matches << match unless @reserved_matches.include?(match)
+    all_matches.each do |match|
+      @unreserved_matches << match unless @seat.bookings.any? { |booking| Match.find(booking.match_id) == match }
     end
 
     @bookings = Booking.all
