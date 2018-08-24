@@ -19,12 +19,14 @@
       <div class="col-xs-12 col-sm-6">
         <h4 class="text-center">You've got these reserved for personal use</h4>
         <ul>
-          <% @reserved_matches.each do |match| %>
-          <li class="keep-them text-center">
-            <p><%= match.home_team %> vs <%= match.away_team %> (<%= match.date %>)</p>
-            <% booking = @seat.bookings.find { |booking| booking.match == match } %>
-            <%= link_to "Release", booking_path(booking), method: :delete, class: "btn btn-warning" %>
-          </li>
+          <% if @seat.bookings.count > 0 %>
+            <% @reserved_matches.each do |match| %>
+            <li class="keep-them text-center">
+              <p><%= match.home_team %> vs <%= match.away_team %> (<%= match.date %>)</p>
+              <% booking = @seat.bookings.find { |booking| booking.match == match } %>
+              <%= link_to "Release", booking_path(booking), method: :delete, class: "btn btn-warning" %>
+            </li>
+            <% end %>
           <% end %>
         </ul>
       </div>
