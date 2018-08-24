@@ -38,6 +38,7 @@ response.body['api']['fixtures'].each do |fixture|
     home_team: fixture.second["homeTeam"],
     away_team: fixture.second["awayTeam"],
     date: fixture.second["event_date"],
+    time: fixture.second["event_date"],
     photo: stadiums[fixture.second["homeTeam"]]
   )
 end
