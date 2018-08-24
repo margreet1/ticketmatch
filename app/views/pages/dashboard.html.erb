@@ -4,7 +4,11 @@
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <h2 class="text-center">Your Season Tickets</h2>
-        <p class="text-center"> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary" %> </p>
+        <% if @seats.empty? %>
+          <p class="text-center"> <%= link_to "Add a new seat", new_seat_path, class: "btn btn-primary" %> </p>
+        <% else %>
+         <p class="text-center"> <%= link_to "Add another seat", new_seat_path, class: "btn btn-primary" %> </p>
+        <% end %>
         <% @seats.each do |seat| %>
         <div class="dashboard-card dashboard-seat-card text-center">
           <div class="dashboard-card-category">
@@ -20,7 +24,11 @@
       </div>
       <div class="col-xs-12 col-md-6">
         <h2 class="text-center">Your Bookings</h2>
-        <p class="text-center"> <%= link_to "Book another match", matches_path, class: "btn btn-warning" %> </p>
+        <% if @foreign_bookings.empty? %>
+          <p class="text-center"> <%= link_to "Book a match", matches_path, class: "btn btn-warning" %> </p>
+        <% else %>
+         <p class="text-center"> <%= link_to "Book another match", matches_path, class: "btn btn-warning" %> </p>
+        <% end %>
         <% @foreign_bookings.each do |booking| %>
         <div class="dashboard-card dashboard-booking-card text-center">
           <div class="dashboard-card-category">
