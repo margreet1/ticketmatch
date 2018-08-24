@@ -1,8 +1,38 @@
-<%= render "partials/banner" %>
-<h2 class="text-center">Upcoming matches</h2>
+<div class="banner">
+  <video autoplay muted loop id="myvid">
+    <source src="<%= asset_path 'background_video.mp4' %>" type="video/mp4">
+  </video>
+  <div class="banner-content">
+    <h1>matcher</h1>
+    <p>Don't waste money. Catch the game.</p>
 
-<div class="wrapper-blue">
+    <div class="col-xs-12 col-sm-6">
+      <div class="homepage_card blue">
+        <h3>Earn some cash</h3>
+        <p class="explanation">Are you a season ticket holder? Earn some easy money on matches you don't want to see with our simple platform. Just upload your seat details and cash will roll into your account.</p>
+        <% if current_user %>
+          <%= link_to "", dashboard_path %>
+        <% else %>
+          <%= link_to "", new_user_session_path %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 ">
+      <div class="homepage_card orange">
+        <h3>Catch the game</h3>
+        <p class="explanation">Can't find a ticket? Our intuitive and easy-to-use platform gives you access to the highest-quality seats at the last minute, so you'll never miss a moment.</p>
+        <%= link_to "", matches_path %>
+      </div>
+    </div>
+  </div>
+  <div class="banner-gradient"></div>
+</div>
+
+
+
+<div class="wrapper-blue hide-video">
   <div class="container">
+    <h2 class="text-center">Upcoming matches</h2>
     <div class="row">
       <% @matches[0..8].each do |match| %>
       <div class="col-xs-12 col-sm-4">
@@ -17,8 +47,8 @@
       </div>
       <% end %>
     </div>
+  <h3 class="text-center">We have hundreds more matches - <%= link_to "click here to see them all", matches_path %></h3>
   </div>
 </div>
 
-<h3 class="text-center">We have hundreds more matches - <%= link_to "click here to see them all", matches_path %></h3>
 
