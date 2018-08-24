@@ -1,28 +1,29 @@
-<h3 class="text-center">Click on a match to buy tickets</h3>
 <div class="row">
   <div class="col-md-1 sidebar">
     <h5>Jump to:</h5>
     <ul class="sidebar_row">
-      <li class="hover-month"><a href="#august">August</a></li>
-      <li class="hover-month"><a href="#september">September</a></li>
-      <li class="hover-month"><a href="#october">October</a></li>
-      <li class="hover-month"><a href="#november">November</a></li>
-      <li class="hover-month"><a href="#december">December</a></li>
-      <li class="hover-month"><a href="#january">January</a></li>
-      <li class="hover-month"><a href="#february">February</a></li>
-      <li class="hover-month"><a href="#march">March</a></li>
-      <li class="hover-month"><a href="#april">April</a></li>
-      <li class="hover-month"><a href="#may">May</a></li>
+      <li><a href="#august" class="hover-month">August</a></li>
+      <li><a href="#september" class="hover-month">September</a></li>
+      <li><a href="#october" class="hover-month">October</a></li>
+      <li><a href="#november" class="hover-month">November</a></li>
+      <li><a href="#december" class="hover-month">December</a></li>
+      <li><a href="#january" class="hover-month">January</a></li>
+      <li><a href="#february" class="hover-month">February</a></li>
+      <li><a href="#march" class="hover-month">March</a></li>
+      <li><a href="#april" class="hover-month">April</a></li>
+      <li><a href="#may" class="hover-month">May</a></li>
     </ul>
   </div>
-  <div class="col-xs-12 col-md-11">
-    <%= form_tag matches_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a match for a home game"
-      %>
-    <% end %>
+  <div class="col-xs-4 col-xs-11">
+      <div class="search-bar">
+        <%= form_tag matches_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a match for a home game"
+          %>
+        <% end %>
+      </div>
     <%= render "partials/match_cards" %>
   </div>
 </div>
