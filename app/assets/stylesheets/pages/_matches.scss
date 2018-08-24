@@ -6,6 +6,8 @@
   text-align: center;
   & li {
     text-align: left;
+  }
+  & a {
     transition-duration: 0.5s;
   }
   font-size: 14px;
@@ -17,5 +19,6 @@
 .hover-month:hover {
   transition-duration: 0.5s;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
+  margin-left: -20px;
 }
