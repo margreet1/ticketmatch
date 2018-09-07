@@ -15,20 +15,6 @@
       <% end %>
     </div>
   <% else %>
-    <h3 class="text-center" id="august">August Matches</h3>
-    <div class="row">
-      <% @august_matches.each do |match| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path (match.photo) %>);">
-            <div class="card-description">
-              <%= match.date %>
-              <h2><%= match.home_team %> vs <%= match.away_team %> </h2>
-            </div>
-            <%= link_to "", match_path(match), class: "card-link" %>
-          </div>
-        </div>
-      <% end %>
-    </div>
     <h3 class="text-center" id="september">September Matches</h3>
     <div class="row">
       <% @september_matches.each do |match| %>
