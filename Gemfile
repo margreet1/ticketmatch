@@ -28,7 +28,8 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 # get for pg_search
 gem 'pg_search'
-
+# quicker page loading
+gem 'turbolinks', '~> 5.2.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
